@@ -19,22 +19,13 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Backend Image
-        run: |
-          docker build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest \
-            ./backend
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest ./backend
 
       - name: Run Backend Tests
-        run: |
-          docker run \
-            ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest \
-            pytest
+        run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest pytest
 
       - name: Build Frontend Image
-        run: |
-          docker build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/capstone-frontend:latest \
-            ./frontend
+        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/capstone-frontend:latest ./frontend
 
       - name: Push Images to Docker Hub
         run: |
