@@ -28,10 +28,10 @@ jobs:
 
       - name: Run Backend Tests
         run: |
-          docker run --rm \
+         docker run --rm \
+            -v "$PWD/backend:/app" \
             vempatisriram2004/capstone-backend:test \
-            python -m pytest /app/test_app.py -q -o cache_dir=/tmp/pytest
-
+            python -m pytest test_app.py -q -o cache_dir=/tmp/pytest
       - name: Push Backend Image
         uses: docker/build-push-action@v5
         with:
