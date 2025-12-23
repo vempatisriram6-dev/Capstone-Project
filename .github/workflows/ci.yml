@@ -25,8 +25,10 @@ jobs:
           push: true
           tags: vempatisriram2004/capstone-backend:latest
 
+      
       - name: Run Backend Tests
-        run: docker run --rm vempatisriram2004/capstone-backend:latest python -m pytest  test_app.py -q -o cache_dir=/tmp/pytest
+        run: docker run --rm vempatisriram2004/capstone-backend:latest python -m pytest /app/test_app.py -q -o cache_dir=/tmp/pytest
+
 
       - name: Build & Push Frontend
         uses: docker/build-push-action@v5
