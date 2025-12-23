@@ -19,14 +19,22 @@ def get_db_connection():
         password=DB_PASSWORD
     )
 
+# ✅ Basic health check (NO DB)
 @app.route("/health")
 def health():
+    return jsonify(status="OK", env=APP_ENV), 200
+
+
+# ✅ DB health check (OPTIONAL)
+@app.route("/health/db")
+def health_db():
     try:
         conn = get_db_connection()
         conn.close()
-        return jsonify(status="OK", db="connected", env=APP_ENV), 200
+        return jsonify(status="OK", db="connected"), 200
     except Exception as e:
         return jsonify(status="ERROR", error=str(e)), 500
+
 
 @app.route("/users")
 def users():
@@ -37,6 +45,7 @@ def users():
     cur.close()
     conn.close()
     return jsonify(rows)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
