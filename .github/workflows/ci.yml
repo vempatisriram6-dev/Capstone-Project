@@ -19,7 +19,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # ✅ BUILD & PUSH BACKEND (SAFE)
       - name: Build & Push Backend Image
         uses: docker/build-push-action@v5
         with:
@@ -27,11 +26,9 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest
 
-      # ✅ RUN BACKEND TESTS
       - name: Run Backend Tests
         run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/capstone-backend:latest pytest
 
-      # ✅ BUILD & PUSH FRONTEND (SAFE)
       - name: Build & Push Frontend Image
         uses: docker/build-push-action@v5
         with:
