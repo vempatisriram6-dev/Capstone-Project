@@ -86,16 +86,19 @@ jobs:
   deploy-to-ec2:
     runs-on: ubuntu-latest
     needs: deploy-production
-    environment: production   
+    environment: production
 
     steps:
-      - name: Deploy to EC2 via SSH
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd ~
-            ./scripts/deploy.sh
-            ./scripts/health_check.sh || ./scripts/rollback.sh
+            cd /home/ubuntu
+            docker pull vempatisriram2004/capstone-frontend:latest
+            docker stop frontend || true
+            docker rm frontend || true
+            docker run -d --name frontend -p 80:80 vempatisriram2004/capstone-frontend:latest
+    
