@@ -89,17 +89,24 @@ jobs:
     environment: production
 
     steps:
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.9.0
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-      - name: Deploy to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-            cd /home/ubuntu
-            docker pull vempatisriram2004/capstone-frontend:latest
-            docker stop frontend || true
-            docker rm frontend || true
-            docker run -d --name frontend -p 80:80 vempatisriram2004/capstone-frontend:latest
-          EOF
+    - name: Debug host
+      run: |
+        echo "HOST=${{ secrets.EC2_HOST }}"
+        echo "USER=${{ secrets.EC2_USER }}"
+
+    - name: Deploy to EC2
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          cd /home/ubuntu
+          docker pull vempatisriram2004/capstone-frontend:latest
+          docker stop frontend || true
+          docker rm frontend || true
+          docker run -d --name frontend -p 80:80 vempatisriram2004/capstone-frontend:latest
+        EOF
+
+ 
