@@ -1,7 +1,111 @@
 <!DOCTYPE html>
-<html>
-<head><title>CI/CD Demo</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Capstone CI/CD Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.65);
+      padding: 40px;
+      border-radius: 14px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
+
+    .badges span {
+      display: inline-block;
+      background: #1e88e5;
+      margin: 6px;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 30px;
+      background: #00e5ff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4dd0e1;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #b0bec5;
+    }
+  </style>
+</head>
+
 <body>
-<h1>Frontend Working</h1>
+  <div class="container">
+    <h1> Capstone CI/CD Project</h1>
+    <p>DevOps End-to-End Pipeline</p>
+
+    <div class="badges">
+      <span>Docker</span>
+      <span>GitHub Actions</span>
+      <span>Flask</span>
+      <span>Nginx</span>
+      <span>PostgreSQL</span>
+      <span>Trivy</span>
+    </div>
+
+    <button onclick="checkHealth()">Check Backend Health</button>
+
+    <div id="status">Waiting for check...</div>
+
+    <div class="footer">
+      Built by <b>Vempati Sriram</b>
+    </div>
+  </div>
+
+  <script>
+    async function checkHealth() {
+      const status = document.getElementById("status");
+      status.innerText = "Checking backend...";
+
+      try {
+        const response = await fetch("http://localhost:5000/health");
+        const data = await response.json();
+        status.innerText = "Backend is healthly and responding sucessfully";
+      } catch (error) {
+        status.innerText = "Backend not reachable ";
+      }
+    }
+  </script>
 </body>
 </html>
