@@ -1,4 +1,5 @@
 
-flask
+flask-Migrate
 psycopg2-binary
 pytest
+flask-cors
