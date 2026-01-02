@@ -144,9 +144,92 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 * Detects HIGH and CRITICAL vulnerabilities
 * Scan results displayed in pipeline logs
 ---
-#  Environment-Specific Configuration (Staging)
+# CI/CD Pipeline (GitHub Actions)
+### Pipeline Stages
+1.checkout Code
 
+2.Build Docker Images
 
+3.Run Unit Tests
 
+4.Trivy Security Scan
 
+5.Push Images to Docker Hub
 
+6.Deploy to EC2 (CD)
+
+---
+#  Environment-Based Deployments (Dev,Staging & Production)
+* This project follows real-world Devops Pratices deploying the application across three environments using GitHub Actions Environments:
+  
+### The following environments were created:
+* Dev
+* staging
+* production
+### Each environment can have:
+* Its own secrets
+* protection rules
+* Manual approval gates (for production)
+  
+## 1.Development Environment (Dev)
+### purpose:
+The Dev enviroment is used for:
+* Continuous Development
+* Frequent testing
+* Fast feedback on code changes
+### How It Works:
+* Triggered automatically on every push to main
+* Uses development environment variables
+* No manual approvals
+* Fastest deployment cycle
+### why Dev Is Important
+ * Catchs bugs early 
+ * Quick iteration
+ * Safe experimantion
+
+ ## 2.Staging Environment
+  ### Purpose:
+* The Staging environment acts as a production-like testing environment.
+## It ensures:
+* Final verification before production
+* Security scans are validated
+* Deployment scripts are tested safely
+### How It Works
+* Triggered after successful CI
+* Uses staging-specific secrets
+* Same Docker images as production
+* No manual approval required
+### Why Staging Is Important
+  * Reduces production failures
+  * Mirrors real production behavior
+  * Confidence before release
+
+## 3.Production Environment
+### Purpose:
+* The Production environment serves real users and must be protected.
+### How It Works
+* Deployment requires manual approval
+* Uses production secrets only
+* Health checks are mandatory
+* Rollback enabled on failure
+### Protection Rules Used
+* Required reviewers
+* Manual approval before deployment
+* Audit logs maintained
+### Why Production Is Protected
+  * Prevents accidental deployments
+  * Ensures stability
+  * Enterprise-grade safety
+---
+# Deployment to AWS EC2
+* Deployment is automated using SSH from GitHub Actions:
+  * pull latest Docker Image
+  * Stop older containers
+  * Remove old containers
+  * Run new containers
+  ```
+   docker pull vempatisriram2004/capstone-frontend:latest
+   docker stop frontend || true
+   docker rm frontend || true
+   docker run -d -p 80:80 vempatisriram2004/capstone-frontend:latest
+  ```
