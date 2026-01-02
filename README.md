@@ -21,7 +21,7 @@ This repository demonstrates how to build a CI/CD pipeline from zero, starting w
   * Unit Testing
   * Trivy security Scanning
   * Image push to Docker Hub
-* Deployed the apllication to AWS EC2
+* Deployed the application to AWS EC2
 * Verified deployment using healthchecks
 * implemented rollback mechanism for failures
  --- 
@@ -33,7 +33,7 @@ This repository demonstrates how to build a CI/CD pipeline from zero, starting w
 
 * Static HTML + CSS UI
 * Served using Nginx
-* Lightweigt and optimized container
+* Lightweight and optimized container
 
 ### **Backend** ###
 
@@ -146,7 +146,7 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 ---
 # CI/CD Pipeline (GitHub Actions)
 ### Pipeline Stages
-1.checkout Code
+1.checkout Source Code
 
 2.Build Docker Images
 
@@ -160,7 +160,7 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 
 ---
 #  Environment-Based Deployments (Dev,Staging & Production)
-* This project follows real-world Devops Pratices deploying the application across three environments using GitHub Actions Environments:
+* This project follows real-world DevOps Practices deploying the application across three environments using GitHub Actions Environments:
   
 ### The following environments were created:
 * Dev
@@ -183,9 +183,9 @@ The Dev enviroment is used for:
 * No manual approvals
 * Fastest deployment cycle
 ### why Dev Is Important
- * Catchs bugs early 
+ * Catches bugs early 
  * Quick iteration
- * Safe experimantion
+ * Safe experimentation
 
  ## 2.Staging Environment
   ### Purpose:
@@ -233,3 +233,33 @@ The Dev enviroment is used for:
    docker rm frontend || true
    docker run -d -p 80:80 vempatisriram2004/capstone-frontend:latest
   ```
+---
+
+# Live Demo
+* Frontend UI
+link
+* Backend Health
+  link
+--- 
+
+# What I Learned
+* Real-world CI/CD pipeline design
+* Docker best practices
+* GitHub Actions workflows
+* Secure container scanning
+* production-safe deployments
+* Rollback and reliability strategies
+---
+
+# Conclusion
+
+* This project demonstrates real-world Devops engineering skills,including CI/CD automation,containerization,security scanning ,cloud deployment and production reliability.
+
+* It serves as a portfoilo-ready capstone project showcasing modern Devops practices from development to production.
+  
+ --- 
+
+
+
+
+  
