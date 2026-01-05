@@ -235,11 +235,16 @@ The Dev enviroment is used for:
   ```
 ---
 
-# Live Demo
-* Frontend UI
-link
-* Backend Health
-  link
+# Application Access
+
+###  Local Development URLs
+
+- **Backend Health Check API**  
+   http://localhost:5000/health
+
+- **Frontend Web Application**  
+   http://localhost:8080/
+
 --- 
 
 # What I Learned
@@ -258,8 +263,10 @@ link
 * It serves as a portfoilo-ready capstone project showcasing modern Devops practices from development to production.
   
  --- 
-
-
-
+# Author Details
+```
+ Name: Vempati Sriram  
+ GitHub:https://github.com/vempatisriram6-dev
+ ```
 
   
