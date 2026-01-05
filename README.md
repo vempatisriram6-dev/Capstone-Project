@@ -220,6 +220,8 @@ The Dev enviroment is used for:
   * Prevents accidental deployments
   * Ensures stability
   * Enterprise-grade safety
+
+![Environment Screenshot](screenshots/env.png)
 ---
 # Deployment to AWS EC2
 * Deployment is automated using SSH from GitHub Actions:
@@ -244,7 +246,9 @@ The Dev enviroment is used for:
 
 - **Frontend Web Application**  
    http://localhost:8080/
-
+  
+  ![Health Screenshot](screenshots/health1.png)
+  
   ![Backend Output](screenshots/backend.output.png)
 
 --- 
