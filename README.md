@@ -143,6 +143,10 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 * Trivy Scans both frontend and backend images
 * Detects HIGH and CRITICAL vulnerabilities
 * Scan results displayed in pipeline logs
+  
+  ![Trivy Backend](screenshots/trivy backend.png)
+
+  ![Trivy Frontend](screenshots/trivy frontend.png)
 ---
 # CI/CD Pipeline (GitHub Actions)
 ### Pipeline Stages
@@ -235,6 +239,7 @@ The Dev enviroment is used for:
    docker rm frontend || true
    docker run -d -p 80:80 vempatisriram2004/capstone-frontend:latest
   ```
+  ![EC2 Deployment](screenshots/ec2.png)
 ---
 
 # Application Access
