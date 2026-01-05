@@ -145,6 +145,8 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 * Scan results displayed in pipeline logs
 
  ![Backend Build & Scan](screenshots/backend1.png)
+ 
+ ![Frontend UI](screenshots/frontend.png)
 
 ---
 # CI/CD Pipeline (GitHub Actions)
