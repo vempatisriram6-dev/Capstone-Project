@@ -140,6 +140,9 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 * Tests executed inside Docker containers
 * Automated Test Execution in CI Pipeline
 * pipeline fails if tests fail
+
+  ![Deployment Strategy Diagram](screenshots/strategy.png)
+
 ---
 # Security Scanning
 * Trivy Scans both frontend and backend images
