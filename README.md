@@ -252,16 +252,18 @@ The Dev enviroment is used for:
 
 ###  Local Development URLs
 
-- **Backend Health Check API**  
-   http://localhost:5000/health
-
 - **Frontend Web Application**  
    http://localhost:8080
- - ** 
-  ![Health Screenshot](screenshots/health1.png)
   
+- **Backend Root Endpoint**  
+   http://localhost:5000
+  
+- **Backend Health Check API**  
+   http://localhost:5000/health
+   
   ![Backend Output](screenshots/backend.output.png)
-
+  
+  ![Health Screenshot](screenshots/health1.png)
 --- 
 
 # What I Learned
