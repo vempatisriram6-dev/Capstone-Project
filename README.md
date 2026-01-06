@@ -1,4 +1,4 @@
-# Capstone-Project
+# End-to-End CI/CD Pipeline using GitHub Actions, Docker & AWS (Capstone-Project)
 * This project demonstrates a complete CI/CD pipeline for a 2-tier web application using modern DevOps practices.
 
 * The system automatically builds, tests, scans, and deploys applications across multiple environments using Docker, GitHub Actions, and AWS EC2.
