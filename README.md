@@ -269,6 +269,37 @@ The Dev enviroment is used for:
   
   ![Health Screenshot](screenshots/health1.png)
 --- 
+# Troubleshooting Guide
+
+ ### Code Changes Not Reflected
+
+**Issue:** Application changes not visible after update.
+**Cause:** Docker image was not rebuilt after code changes.
+**Resolution:** Rebuilt images using docker compose build and restarted services.
+
+### GitHub Actions Pipeline Failure
+
+**Issue:** CI pipeline failed during execution.
+
+**Cause:** Missing GitHub secrets or incorrect workflow configuration.
+
+**Resolution:** Added required secrets and validated workflow YAML file.
+
+### Trivy Security Scan Failure
+
+**Issue:** Pipeline failed at Trivy scan stage.
+
+**Cause:** High or critical vulnerabilities detected in Docker image.
+
+**Resolution:** Updated base images and addressed reported vulnerabilities.
+
+### Deployment to EC2 Failed
+
+**Issue:** Application not accessible after deployment.
+
+**Cause:** Security group rules or SSH access misconfiguration.
+
+**Resolution:** Opened required ports and validated EC2 SSH permissions.
 
 # What I Learned
 * Real-world CI/CD pipeline design
