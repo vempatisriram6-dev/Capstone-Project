@@ -168,6 +168,7 @@ Testing is critical part of this CI/Cd pipeline to ensure that only reliable and
 
 6.Deploy to EC2 (CD)
 
+![EC2 Deployment](screenshots/ec2.png)
 ---
 #  Environment-Based Deployments (Dev,Staging & Production)
 * This project follows real-world DevOps Practices deploying the application across three environments using GitHub Actions Environments:
@@ -231,8 +232,6 @@ The Dev enviroment is used for:
   * Ensures stability
   * Enterprise-grade safety
     
-![Multi-Stage Pipeline Security Integration](screenshots/multi-stage-pipeline-security-integration.png)
-
 ![Environment Screenshot](screenshots/env.png)
 ---
 # Deployment to AWS EC2
