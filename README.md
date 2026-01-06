@@ -256,16 +256,16 @@ The Dev enviroment is used for:
 - **Frontend Web Application**  
    http://localhost:8080
   
+   ![Backend Output](screenshots/backend.output.png)
+  
 - **Backend Root Endpoint**  
    http://localhost:5000
   
+    ![Application Running](screenshots/running.png)
+  
 - **Backend Health Check API**  
    http://localhost:5000/health
-   
-  ![Backend Output](screenshots/backend.output.png)
-  
-  ![Application Running](screenshots/running.png)
-  
+     
   ![Health Screenshot](screenshots/health1.png)
 --- 
 # Troubleshooting Guide
