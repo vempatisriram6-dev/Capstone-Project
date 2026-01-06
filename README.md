@@ -273,7 +273,9 @@ The Dev enviroment is used for:
  ### Code Changes Not Reflected
 
 **Issue:** Application changes not visible after update.
+
 **Cause:** Docker image was not rebuilt after code changes.
+
 **Resolution:** Rebuilt images using docker compose build and restarted services.
 
 ### GitHub Actions Pipeline Failure
