@@ -230,6 +230,8 @@ The Dev enviroment is used for:
   * Prevents accidental deployments
   * Ensures stability
   * Enterprise-grade safety
+    
+![Multi-Stage Pipeline Security Integration](screenshots/multi-stage-pipeline-security-integration.png)
 
 ![Environment Screenshot](screenshots/env.png)
 ---
@@ -262,6 +264,8 @@ The Dev enviroment is used for:
    http://localhost:5000/health
    
   ![Backend Output](screenshots/backend.output.png)
+  
+  ![Application Running](screenshots/running.png)
   
   ![Health Screenshot](screenshots/health1.png)
 --- 
