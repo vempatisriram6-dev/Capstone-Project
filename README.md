@@ -253,7 +253,7 @@ The Dev enviroment is used for:
 ###  Local Development URLs
 
 - **Frontend Web Application**  
-   http://localhost:8080/
+   http://localhost:8080
   
 - **Backend Root Endpoint**  
    http://localhost:5000
