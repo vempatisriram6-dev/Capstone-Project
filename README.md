@@ -89,7 +89,7 @@ Push to Docker Hub
 Deploy to Server (EC2 / VM)
 
 ```
-![GitHub Actions Pipeline](screenshots/actions.png)
+
 
 ---
 # Project Structure
