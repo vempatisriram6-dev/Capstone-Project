@@ -90,6 +90,8 @@ Deploy to Server (EC2 / VM)
 
 ```
 
+![Architecture Diagram](screenshots/Articet.png)
+
 
 ---
 # Project Structure
